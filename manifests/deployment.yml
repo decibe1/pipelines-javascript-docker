@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: decibepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: decibepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: decibepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: decibepipelinesjavascriptdocker 
+          image: decibelcontainerregistry.azurecr.io/decibepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
